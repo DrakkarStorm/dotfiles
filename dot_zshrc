@@ -1,0 +1,62 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# antigen path when using Homebrew:
+source $(brew --prefix)/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# load plugins
+antigen bundles <<EOBUNDLES
+    git
+    kubectl
+    history
+    sudo
+    copydir
+    copyfile
+    copybuffer
+    dirhistory
+    jsontools
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-completions
+EOBUNDLES
+
+# load the theme
+antigen theme romkatv/powerlevel10k
+
+# Tell Antigen that you're done.
+antigen apply
+
+# more configuration
+export TERM=xterm-256color
+export GOPATH=$HOME/go
+export CLAUDE_PATH=$HOME/.claude/local/claude
+
+# auto updae zsh every week
+zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 7
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# load custom aliases
+[[ -s "$HOME/.zsh_aliases" ]] && source "$HOME/.zsh_aliases"
+
+# launch fastfetch every shell open
+if command -v neofetch &> /dev/null; then
+  neofetch
+fi
+
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$CLAUDE_PATH
