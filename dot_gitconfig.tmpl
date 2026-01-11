@@ -1,0 +1,63 @@
+[user]
+    name = {{ .name }}
+    email = {{ .email }}
+    {{- if .gpg_key }}
+    signingkey = {{ .gpg_key }}
+    {{- end }}
+
+[core]
+    editor = vim
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+{{- if .gpg_key }}
+[commit]
+    gpgsign = true
+{{- end }}
+
+[tag]
+    gpgsign = true
+
+[gpg]
+    program = gpg
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    amend = commit --amend --no-edit
+
+[color]
+    ui = auto
+
+[diff]
+    tool = vscode
+    algorithm = histogram
+    colorMoved = zebra
+    colorMovedWS = allow-indentation-change  # Ignore les changements d'indentation
+
+[merge]
+    conflictstyle = zdiff3  # ou diff3 si Git < 2.35
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    tool = vscode
+    conflictstyle = zdiff3  # ou diff3 si Git < 2.35
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
