@@ -60,3 +60,6 @@ fi
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$CLAUDE_PATH
+
+# GPG Configuration
+export GPG_TTY=$(tty)
