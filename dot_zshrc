@@ -25,6 +25,7 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-completions
+    marlonrichert/zsh-autocomplete@main
 EOBUNDLES
 
 # load the theme
@@ -35,12 +36,14 @@ antigen apply
 
 # more configuration
 export TERM=xterm-256color
+
 export GOPATH=$HOME/go
 export CLAUDE_PATH=$HOME/.claude/local/claude
 
 # auto updae zsh every week
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 7
+zstyle ':autocomplete:*' list-lines 10 # limit displaying 10 lines at the same time
 
 HISTSIZE=1000
 HISTFILESIZE=2000

@@ -15,6 +15,7 @@ fi
 brew bundle --file=- <<EOF
 # Terminaux et shells
 brew "zsh"
+brew "antigen"
 
 # Useful commands
 brew "wget"
