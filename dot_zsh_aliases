@@ -10,6 +10,7 @@ alias bi='HOMEBREW_NO_AUTO_UPDATE=1=1 brew install '
 alias e=exit
 alias ls='ls -lart --color=auto'
 alias ll="ls -lart --color=auto"
+alias l="ll"
 
 # edit
 alias edit="vim"
