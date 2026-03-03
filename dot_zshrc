@@ -38,7 +38,6 @@ antigen apply
 export TERM=xterm-256color
 
 export GOPATH=$HOME/go
-export CLAUDE_PATH=$HOME/.claude/local/claude
 
 # auto updae zsh every week
 zstyle ':omz:update' mode auto
@@ -62,7 +61,6 @@ if command -v neofetch &> /dev/null; then
 fi
 
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$CLAUDE_PATH
 
 # GPG Configuration
 export GPG_TTY=$(tty)
