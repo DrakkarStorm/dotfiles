@@ -1,4 +1,3 @@
-alias claude="$HOME/.claude/local/claude"
 
 # file
 alias rmrf='rm -rf '
