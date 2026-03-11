@@ -50,3 +50,40 @@ function acp() { # acp "my commit"
     git commit -m "$1"
     git push
 }
+
+# Remonter N niveaux de répertoire facilement
+up() { cd $(printf '../%.0s' $(seq 1 ${1:-1})); }
+# Usage: up 3  →  cd ../../..
+
+# Extraire n'importe quelle archive avec une seule commande
+extract() {
+  case "$1" in
+    *.tar.gz|*.tgz) tar xzf "$1" ;;
+    *.tar.bz2)      tar xjf "$1" ;;
+    *.zip)          unzip "$1" ;;
+    *.gz)           gunzip "$1" ;;
+    *.rar)          unrar x "$1" ;;
+    *)              echo "Format non supporté: $1" ;;
+  esac
+}
+
+# Créer un dossier et y entrer directement
+mkcd() { mkdir -p "$1" && cd "$1"; }
+# Usage: mkcd mon-projet/src
+
+# Résumé rapide de l'utilisation disque, trié
+alias ducks='du -cks * | sort -rn | head -20'
+
+# Backup rapide d'un fichier avant de le modifier
+bak() { cp "$1"{,.bak_$(date +%Y%m%d_%H%M%S)}; }
+# Usage: bak /etc/nginx/nginx.conf
+
+# Décoder un JWT rapidement sans outil externe
+jwt() {
+  echo "$1" | cut -d'.' -f2 | base64 --decode 2>/dev/null | python3 -m json.tool
+}
+# Usage: jwt eyJhbGci...
+
+# Usage for kubernetes secret
+b64e() { printf '%s' "$1" | base64; }
+b64d() { printf '%s' "$1" | base64 --decode; }
