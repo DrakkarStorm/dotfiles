@@ -1,0 +1,76 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Go - tabs for indentation (gofmt standard)
+[*.go]
+indent_style = tab
+
+# Python - 4 spaces, 88 chars (Black standard)
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 88
+
+# JavaScript/TypeScript - Prettier defaults
+[*.{js,jsx,ts,tsx,mjs,cjs}]
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+# Web markup and styles - 2 spaces
+[*.{html,htm,css,scss,sass,less}]
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+# Data/config languages - 2 spaces
+[*.{json,yaml,yml,toml}]
+indent_style = space
+indent_size = 2
+
+# Shell scripts - Google Style Guide
+[*.{sh,bash,zsh}]
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+# Puppet - official style guide
+[*.{pp,epp}]
+indent_style = space
+indent_size = 2
+max_line_length = 140
+
+# Makefiles - tabs required for recipes
+[{Makefile,*.mk,*.mak}]
+indent_style = tab
+
+# Dockerfile - 4 spaces common practice
+[{Dockerfile,*.dockerfile}]
+indent_style = space
+indent_size = 4
+
+# Markdown - trailing whitespace is significant
+[*.{md,markdown}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = off
+
+# XML - 2 spaces recommended
+[*.{xml,xsl,xsd,xslt}]
+indent_style = space
+indent_size = 2
+
+# Configuration files
+[*.{ini,conf,cfg,config}]
+indent_style = space
+indent_size = 2
+
