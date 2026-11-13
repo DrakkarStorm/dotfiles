@@ -1,6 +1,6 @@
 Debug = false
 Quiet = false
-URL = ""
+URL = {{ .plik_url | quote }}
 OneShot = false
 Removable = false
 Stream = false
@@ -27,4 +27,4 @@ Insecure = false
 [ArchiveOptions]
   Compress = "gzip"
   Options = ""
-  Tar = "/bin/tar"
+  Tar = "/usr/bin/tar"
