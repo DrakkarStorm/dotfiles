@@ -1,0 +1,30 @@
+Debug = false
+Quiet = false
+URL = ""
+OneShot = false
+Removable = false
+Stream = false
+Secure = false
+SecureMethod = "openssl"
+Archive = false
+ArchiveMethod = "tar"
+DownloadBinary = "curl"
+Comments = ""
+Login = ""
+Password = ""
+TTL = 0
+ExtendTTL = false
+AutoUpdate = false
+Token = ""
+DisableStdin = false
+Insecure = false
+
+[SecureOptions]
+  Cipher = "aes-256-cbc"
+  Openssl = "/usr/bin/openssl"
+  Options = "-md sha512 -pbkdf2 -iter 120000"
+
+[ArchiveOptions]
+  Compress = "gzip"
+  Options = ""
+  Tar = "/bin/tar"
