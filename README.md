@@ -10,7 +10,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:DrakkarStorm
 Tu seras invité à renseigner :
 - Email, nom complet
 - GPG key ID (optionnel, laisse vide au début)
-- URL du serveur Plik (optionnel, ex : `http://192.168.0.56:8080`)
+- URL du serveur Plik (optionnel, ex : `http://plik.example.lan:8080`)
 
 ## Ce qui est configuré
 
