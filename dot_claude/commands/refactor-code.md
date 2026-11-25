@@ -37,7 +37,7 @@ Follow this systematic approach to refactor code: **$ARGUMENTS**
 5. **Incremental Refactoring**
    - Make small, focused changes one at a time
    - Run tests after each change to ensure nothing breaks
-   - Commit working changes frequently with descriptive messages
+   - Keep working changes uncommitted unless the user asks you to commit
    - Use IDE refactoring tools when available for safety
 
 6. **Code Quality Improvements**
