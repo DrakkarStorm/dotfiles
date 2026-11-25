@@ -1,0 +1,13 @@
+# Ghostty Terminal Configuration
+
+# Font
+font-family = "JetBrains Mono"
+
+# Theme
+background = 282c34
+
+# Comportement
+mouse-hide-while-typing = true
+
+# Key-binding
+keybind = shift+enter=text:\n
